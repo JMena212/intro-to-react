@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test Component</title>
+  </head>
+
+  <body>
+     <div id="component"></div>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>
+     <script type="text/babel">
+ 
+class Parking extends React.Component {
+        constructor(props){
+           super(props);
+           this.state = {
+             number: 10
+           }
+         }
+        
+        render() {
+          return (
+            <div>
+              <h2>Please park my {this.props.label} within the next {this.state.number} minutes</h2>
+            </div>
+          );
+        }
+      }
+
+      const info = {
+        date: new Date(),
+       
+      }
+
+      Parking.defaultProps = {
+        label: "Acura"
+      }
+
+      ReactDOM.render(
+        <Parking
+        image={info.image}/>,document.getElementById('component')
+      );
+
+       
+     </script>
+  </body>
+
+</html>
